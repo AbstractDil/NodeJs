@@ -11,21 +11,61 @@
 </head>
 <body class="bg-dark text-white">
 
+<!-- Main App  Starts -->
 
     <!-- My First VueJS App -->
 
     <div class="container" id="app">
-        <h1>
-            {{ title }}
-        </h1>
-    
-        <p>
-            {{ description }}
-        </p>
 
-    </div>
-    
+        <div class="card" v-bind:style="{ width: cardWidth + 'rem' }">
+            <img v-bind:src="imgUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" v-bind:class="textClass">
+                {{ title }}
+              </h5>
+              <p class="card-text"> {{ description }}</p>
+              <a v-bind:href="btnUrl" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+   
 
+
+    <!-- Vue Directives -->
+    
+    <!-- Types
+Directive	Details
+v-bind	Connects an attribute in an HTML tag to a data variable inside the Vue instance.
+v-if	Creates HTML tags depending on a condition. Directives v-else-if and v-else are used together with the v-if directive.
+v-show	Specifies if an HTML element should be visible or not depending on a condition.
+v-for	Creates a list of tags based on an array in the Vue instance using a for-loop.
+v-on	Connects an event on an HTML tag to a JavaScript expression or a Vue instance method. We can also define more specifically how our page should react to a certain event by using event-modifiers.
+v-model	Used in HTML forms with tags like <form>, <input> and <button>. Creates a two way binding between an input element and a Vue instance data property.-->
+
+
+ <!-- v-bind using conditional statement -->
+ <div class="alert mt-2" role="alert" v-bind:class="isAlert?'bg-warning':'bg-danger'">
+    A simple danger alert—check it out!
+  </div>
+
+  <!-- Instead of v-bind we use : -->
+
+  <div class="alert" role="alert" :class="isAlert?'bg-primary':'bg-success'">
+    A simple danger alert—check it out!
+  </div>
+
+  <!-- v-if and v-else -->
+
+  <div class="alert alert-success" role="alert" v-if="isAvailable">
+    Books are available.
+  </div>
+
+  <div class="alert alert-danger" role="alert" v-else>
+    Stock Out
+  </div>
+
+</div>
+
+<!-- Main App Ends -->
     <!-- VueJS App Handler -->
     <script src="app.js" type="text/javascript"></script>
 
