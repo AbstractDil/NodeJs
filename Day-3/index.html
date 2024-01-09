@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Day-3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html,body{
+            height: 100%;
+        }
+
+    </style>
+
+</head>
+<body class="d-grid align-items-center bg-primary">
+
+    <div id="app">
+
+        <h3 class="text-light text-center my-3">{{msg}}
+            {{msg.length}}
+        </h3>
+        <div class=" container d-flex justify-content-center">
+            
+            <button v-bind:class="changeBg ? 'btn-warning' : 'btn-light'" 
+            class="btn btn-lg" 
+            v-on:click="toggle">Click Me</button>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
